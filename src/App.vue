@@ -16,19 +16,36 @@
       </div>
     </header>
     <main class="main container">
-      <job-card></job-card>
-      <job-card></job-card>
+      <div v-for="(item, index) in jobs" :key="index">
+        <job-card :item="item" @filterData="filterData"></job-card>
+     
+      </div>
     </main>
   </div>
 </template>
 
 <script>
 import JobCard from "./components/card/JobCard.vue";
+import jobsListing from "./assets/data.json";
 export default {
   name: "App",
   components: {
     JobCard,
   },
+  setup(){
+    let jobs  = jobsListing
+    let filterList = []
+    const filterData  = (value) =>{
+      filterList = value
+      console.log(filterList)
+    }
+    return{
+      jobs,
+      filterData,
+      filterList
+    }
+  },
+  
 };
 </script>
 <!-- Main style -->
