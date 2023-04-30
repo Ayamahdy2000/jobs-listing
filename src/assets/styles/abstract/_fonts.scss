@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'League Spartan Bold';
+    src: url(~assets/fonts/LeagueSpartan-SemiBold/LeagueSpartan-SemiBold.eot);
+    src: url(~assets/fonts/LeagueSpartan-SemiBold/LeagueSpartan-SemiBold.eot?#iefix) format('embedded-opentype'),
+        url(~assets/fonts/LeagueSpartan-SemiBold/LeagueSpartan-SemiBold.woff2) format('woff2'),
+        url(~assets/fonts/LeagueSpartan-SemiBold/LeagueSpartan-SemiBold.woff) format('woff'),
+        url(~assets/fonts/LeagueSpartan-SemiBold/LeagueSpartan-SemiBold.ttf) format('truetype'),
+        url(~assets/fonts/LeagueSpartan-SemiBold/LeagueSpartan-SemiBold.svg#LeagueSpartan-SemiBold) format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'League Spartan Medium';
+    src: url(~assets/fonts/LeagueSpartan-Medium/LeagueSpartan-Medium.eot);
+    src: url(~assets/fonts/LeagueSpartan-Medium/LeagueSpartan-Medium.eot?#iefix) format('embedded-opentype'),
+        url(~assets/fonts/LeagueSpartan-Medium/LeagueSpartan-Medium.woff2) format('woff2'),
+        url(~assets/fonts/LeagueSpartan-Medium/LeagueSpartan-Medium.woff) format('woff'),
+        url(~assets/fonts/LeagueSpartan-Medium/LeagueSpartan-Medium.ttf) format('truetype'),
+        url(~assets/fonts/LeagueSpartan-Medium/LeagueSpartan-Medium.svg#LeagueSpartan-Medium) format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
