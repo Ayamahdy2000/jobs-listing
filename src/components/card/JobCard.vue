@@ -66,19 +66,21 @@
   </div>
 </template>
 <script>
+
 export default {
-  props: ["item"],
-  emits:["filterData"],
-  setup(props,  context) {
-    let filterData = [];
+  props: ["item" , "filterList"],
+  emits: ["filterData"],
+  setup(props, context) {
+   
     const getFilterData = (item) => {
-      filterData.push(item);
-        context.emit("filterData" , filterData)
+     
+      context.emit("filterData", item);
     };
     return {
-      filterData,
+     
       getFilterData,
     };
   },
+  mounted() {},
 };
 </script>

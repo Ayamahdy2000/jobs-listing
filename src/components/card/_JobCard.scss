@@ -6,11 +6,11 @@
     border-left: 5px solid #fff;
     cursor: pointer;
     margin-bottom: 24px;
-   
-    &:hover{
+
+    &:hover {
         border-left: 5px solid #5DA5A4;
         transform: scale(1.01);
-       
+
     }
 
     .card__img {
@@ -26,22 +26,25 @@
         font-family: 'League Spartan Bold';
         display: grid;
         grid-template-columns: max-content max-content max-content;
-        gap: 15px;
+        gap: 10px;
         align-items: center;
 
         .card__sub-head__tag {
             color: #fff;
             padding: 4px 12px 1px;
+
             @media (max-width:1024px) {
-            padding: 4px 12px 3px;
-                
+                padding: 4px 12px 3px;
+
             }
+
             font-size: calc(var(--fontModifier) * (12px + (15 - 12) * ((100vw - 1366px)/ (1920 - 1366))));
             border-radius: 50px;
             text-transform: uppercase;
 
             &.card__sub-head__tag--new {
                 background-color: #5DA5A4;
+                margin-left: 12px;
             }
 
             &.card__sub-head__tag--featured {
@@ -55,48 +58,95 @@
         text-transform: capitalize;
         color: #5DA5A4;
         font-family: 'League Spartan Bold';
-        margin-top:6px;
+        margin-top: 6px;
         margin-bottom: 0px;
     }
 
     .card__note {
         margin-bottom: 0;
-       span{
-        color: #9AA0A1;
-        font-size: calc(var(--fontModifier) * (15px + (18 - 15) * ((100vw - 1366px)/ (1920 - 1366))));
-        font-family: 'League Spartan Medium';
-        &.card__note__dot{
-            margin-bottom: 7px;
-         
-            color: #C6C6C6;
+
+        span {
+            color: #9AA0A1;
+            font-size: calc(var(--fontModifier) * (15px + (18 - 15) * ((100vw - 1366px)/ (1920 - 1366))));
+            font-family: 'League Spartan Medium';
+
+            &.card__note__dot {
+                margin-bottom: 7px;
+
+                color: #C6C6C6;
+            }
         }
-       }
+
         display: grid;
         align-items: center;
         grid-template-columns: max-content max-content max-content max-content max-content;
         gap: 15px;
     }
-    .card__tags{
+
+    .card__tags {
         display: flex;
         flex-wrap: wrap;
         row-gap: 10px;
-       .card__tag{
-        margin-right: 15px;
-        color: #5DA5A4;
-        background-color: $LightGrayishCyan;
-        font-family: 'League Spartan Bold';
-        padding: 5px 20px 2px;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-        font-size: calc(var(--fontModifier) * (15px + (18 - 15) * ((100vw - 1366px)/ (1920 - 1366))));
-        &:hover{
-            background-color: #5DA5A4;
-            color: #fff;
+
+        .card__tag {
+            margin-right: 15px;
+            color: #5DA5A4;
+            background-color: $LightGrayishCyan;
+            font-family: 'League Spartan Bold';
+            padding: 5px 20px 2px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            font-size: calc(var(--fontModifier) * (15px + (18 - 15) * ((100vw - 1366px)/ (1920 - 1366))));
+
+            &:hover {
+                background-color: #5DA5A4;
+                color: #fff;
+            }
+
+            &:last-child {
+                margin: 0;
+            }
         }
-        &:last-child{
-            margin: 0;
+    }
+}
+
+@media (max-width:767px) {
+    .card {
+        padding: 40px 15px 30px;
+
+        .card__img {
+            position: absolute;
+            width: 50px;
+            top: -26px;
+            left: 15px;
         }
-       }
+        .card__sub-head{
+            font-size: calc(var(--fontModifier) * 11px );
+            .card__sub-head__tag{
+                font-size: calc(var(--fontModifier) * 11px );
+                padding: 4px 12px 1px;
+            }
+        }
+        .card__head{
+            font-size: calc(var(--fontModifier) * 14px );
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        .card__note{
+            border-bottom: 1px solid #C6C6C6;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            span{
+                font-size: calc(var(--fontModifier) * 11px );
+            }
+        }
+        .card__tags{
+            .card__tag{
+                font-size: calc(var(--fontModifier) * 11px );
+                margin-right: 12px;
+                padding: 5px 17px 2px;
+            }
+        }
     }
 }
