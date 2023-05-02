@@ -27,7 +27,7 @@
       </div>
     </header>
     <main class="main container">
-      <div v-for="(item, index) in jobs" :key="index">
+      <div v-for="(item, index) in filterArr()" :key="index">
         <job-card
           :item="item"
           @filterData="filterData"
@@ -50,31 +50,60 @@ export default {
     FilterPart,
   },
   setup() {
-    let jobs = ref(jobsListing);
+    let jobs ;
     let filterList = ref([]);
     const filterData = (value) => {
       filterList.value = [...filterList.value, value];
       filterList.value = [...new Set(filterList.value)];
-      setTimeout(() =>{
+      setTimeout(() => {
         divHeight();
-      },0)
+      }, 0);
+      filterArr();
     };
     const removeItem = (value) => {
       filterList.value.splice(value, 1);
-       setTimeout(() =>{
+      setTimeout(() => {
         divHeight();
-      },0)
+      }, 0);
+      filterArr()
     };
     const divHeight = () => {
       let filterCard = document.getElementById("filter-card").clientHeight;
       filterCard = filterCard / 2;
       document.getElementById("filter").style.height = filterCard + "px";
     };
+    const filterArr = () => {
+    jobs = ref(jobsListing);
+      if (filterList.value.length > 0) {
+        for (let i = 0; i < filterList.value.length; i++) {
+          jobs.value = jobs.value.filter((el) => {
+            if (
+              el.role === filterList.value[i] ||
+              el.level === filterList.value[i]
+            ) {
+              return el;
+            }
+            for(let y = 0 ; y < el.languages.length ; y++){
+              if(el.languages[y] === filterList.value[i]){
+                return el
+              }
+            }
+             for(let x = 0 ; x < el.tools.length ; x++){
+              if(el.tools[x] === filterList.value[i]){
+                return el
+              }
+            }
+          });
+        }
+      }
+      return jobs.value;
+    };
     const removeArr = () => {
       filterList.value = [];
-       setTimeout(() =>{
+      setTimeout(() => {
         divHeight();
-      },0)
+      }, 0);
+      filterArr()
     };
     return {
       jobs,
@@ -83,6 +112,7 @@ export default {
       removeItem,
       removeArr,
       divHeight,
+      filterArr,
     };
   },
 };
