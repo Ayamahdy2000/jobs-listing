@@ -61,7 +61,9 @@ export default {
     };
     const removeItem = (value) => {
       filterList.value.splice(value, 1);
-      divHeight();
+       setTimeout(() =>{
+        divHeight();
+      },0)
     };
     const divHeight = () => {
       let filterCard = document.getElementById("filter-card").clientHeight;
@@ -69,7 +71,10 @@ export default {
       document.getElementById("filter").style.height = filterCard + "px";
     };
     const removeArr = () => {
-      filterList.value = ref([]);
+      filterList.value = [];
+       setTimeout(() =>{
+        divHeight();
+      },0)
     };
     return {
       jobs,

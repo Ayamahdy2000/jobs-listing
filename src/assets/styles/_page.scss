@@ -45,13 +45,13 @@ body {
 }
 
 .main {
-    margin-top: 75px;
+    margin-top: 50px;
     margin-bottom: 60px;
 }
 
 @media (min-width:1920px) {
     .main {
-        margin-top: 95px;
+        margin-top: 70px;
     margin-bottom: 80px;
 
     }
@@ -59,12 +59,12 @@ body {
 
 @media (max-width:1024px) {
     .main {
-        margin-top: 75px;
+        margin-top: 50px;
     }
 }
 
 @media (max-width:767px) {
     .main {
-        margin-top: 55px;
+        margin-top: 30px;
     }
 }
